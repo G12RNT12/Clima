@@ -1,5 +1,23 @@
 # Atmos — Observatorio Meteorológico Full-Stack
 
+## Despliegue en Netlify
+
+Conecta el repositorio y selecciona la rama `main`. El archivo `netlify.toml`
+configura la compilación y la API automáticamente:
+
+- Directorio base: raíz del repositorio (`.`).
+- Comando de compilación: `npm run build`.
+- Directorio de publicación: `client/dist`.
+- Funciones: `server/netlify/functions`.
+
+La API Express se ejecuta mediante Netlify Functions y las rutas de React
+usan `index.html` como fallback. Mantén `VITE_API_BASE_URL=/api` (o sin definir).
+Para este despliegue no necesitas alojar el servidor por separado.
+
+Si ya configuraste otro directorio base en Netlify, cámbialo a la raíz y
+vuelve a desplegar desde GitHub. Subir solamente `client/dist` de forma manual
+publica la interfaz, pero no instala las funciones de la API.
+
 Aplicación web moderna de pronóstico meteorológico y calidad del aire en tiempo real, construida con **React 18**, **TypeScript**, **Tailwind CSS**, **Framer Motion** y **Recharts** en el frontend, junto con un servidor intermedio en **Node.js + Express** que implementa caché en memoria (TTL), limitación de peticiones (rate limiting) y el patrón de diseño **Adapter / Strategy (`WeatherProvider`)**.
 
 Funciona de forma inmediata sin necesidad de configurar claves API gracias a la integración predeterminada con **Open-Meteo**.
