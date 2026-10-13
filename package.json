@@ -1,0 +1,19 @@
+{
+  "name": "weather-app-pro",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Aplicación de pronóstico del clima en tiempo real con arquitectura full-stack (React + Express + TypeScript)",
+  "scripts": {
+    "dev": "concurrently -n \"SERVER,CLIENT\" -c \"cyan,magenta\" \"npm run dev --prefix server\" \"npm run dev --prefix client\"",
+    "dev:server": "npm run dev --prefix server",
+    "dev:client": "npm run dev --prefix client",
+    "postinstall": "npm install --prefix server && npm install --prefix client",
+    "install:all": "npm install && npm install --prefix server && npm install --prefix client",
+    "build": "npm run build --prefix server && npm run build --prefix client",
+    "test": "npm test --prefix server"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "prettier": "^3.4.2"
+  }
+}
