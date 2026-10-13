@@ -174,6 +174,7 @@ export const HourlyForecast: React.FC<HourlyForecastProps> = ({
               strokeWidth={2.5}
               fillOpacity={1}
               fill="url(#tempCurveGrad)"
+              isAnimationActive={false}
               activeDot={{
                 r: 5,
                 fill: '#FDE047',
